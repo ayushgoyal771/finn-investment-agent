@@ -31,11 +31,11 @@ async function setup(options={}) {
   w.HTMLDialogElement.prototype.close=function(){this.open=false;};
   w.fetch=async(url,config={})=>{
     assert.ok(url.startsWith('/api/'),'UI test attempted an external fetch');
-    calls.push({url,method:config.method||'GET',body:config.body?JSON.parse(config.body):null});
+    calls.push({url,method:config.method||'GET',body:config.body?JSON.parse(config.body):null,authorized:!!config.headers?.get('Authorization')});
     let body,status=200;
-    if(url==='/api/health')body={status:'ok',model_available:false,auth_required:!!options.auth};
+    if(url==='/api/health')body={status:'ok',model_available:false,auth_required:!!options.auth&&!options.publicDemo,public_demo:!!options.publicDemo};
     else if(options.fail && url.startsWith('/api/brief')){body={detail:'Provider test failure <script>alert(1)</script>'};status=503;}
-    else if(options.auth && !config.headers?.get('Authorization')){body={detail:'Enter a token'};status=401;}
+    else if(options.auth && !options.publicDemo && !config.headers?.get('Authorization')){body={detail:'Enter a token'};status=401;}
     else if(url.startsWith('/api/brief'))body=structuredClone(fixtures.brief);
     else if(url==='/api/settings')body=structuredClone(fixtures.settings);
     else if(url==='/api/research')body=structuredClone(fixtures.research);
@@ -45,10 +45,23 @@ async function setup(options={}) {
     if(options.mutate)options.mutate(body,url);
     return{ok:status<400,status,json:async()=>body};
   };
+  if(options.token)w.sessionStorage.setItem('finn-token',options.token);
   w.eval(fs.readFileSync(path.join(root,'frontend/app.js'),'utf8'));
   await settled();
   return {dom,w,document:w.document,calls,errors};
 }
+
+test('public demo loads without a token dialog and clears a previous private token',async t=>{
+  const ctx=await setup({auth:true,publicDemo:true,token:'previous-token'});t.after(()=>ctx.dom.window.close());
+  assert.equal(ctx.document.querySelector('#auth-dialog').open,false);
+  assert.ok(ctx.document.querySelectorAll('.signal-card').length);
+  assert.equal(ctx.w.sessionStorage.getItem('finn-token'),null);
+  assert.match(ctx.document.querySelector('#workspace-access').textContent,/Public demo/);
+  assert.equal(ctx.document.querySelector('#use-model').disabled,true);
+  assert.match(ctx.document.querySelector('#model-label').textContent,/disabled in public demo/);
+  assert.ok(ctx.calls.filter(c=>c.url!=='/api/health').every(c=>!c.authorized));
+  assert.deepEqual(ctx.errors,[]);
+});
 
 test('brief renders real API contract and opens the second-degree workflow',async t=>{
   const ctx=await setup();t.after(()=>ctx.dom.window.close());

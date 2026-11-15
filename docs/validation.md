@@ -2,6 +2,10 @@
 
 Build date: **16 November 2026 (Asia/Kolkata)**.
 
+## Public-demo access update
+
+After the owner requested direct access without a token, the check suite passed **89 tests: 78 Python and 11 DOM**. New checks verify public access for remote clients with or without a previously configured token, all three workflows, saved-state writes, retained host/origin checks, continued private-mode denial, blocked public model calls even with a configured key, and no token dialog or stale browser token in the public interface. Earlier protected-access verification below describes the initial deployment.
+
 ## Automated checks
 
 | Check | Observed result |

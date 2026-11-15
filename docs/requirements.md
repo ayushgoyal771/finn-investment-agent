@@ -22,7 +22,7 @@ The two PDFs are project reference material. Their submission email, public-repo
 | Primary-only Pull workflow | Cited annual report/transcript packs and live evidence retrieval; optional cited synthesis | No secondary news, broker notes or model company knowledge |
 | Network woven into Push/Pull | Ranked people and suggested diligence questions in signal details and research | Relevance is contextual, not proof of private knowledge |
 | Direct network workflow | Expertise/company/person search, career notes, reconnect prompts, conversation dates and export | Synthetic network; no real-contact CRUD |
-| Architecture/security/cost writeup | `docs/architecture.md`; local loopback default; opt-in model; TTL caches; deployment direction | Single user, no production tenancy or encryption |
+| Architecture/security/cost writeup | `docs/architecture.md`; local loopback default; opt-in model in private mode; explicit public synthetic demo; TTL caches | Single user, no production tenancy or encryption |
 | Repository and covering note | Public GitHub repository, free Render deployment, README, CI, Dockerfile, notes and tests | Assessment email not sent; free hosting has no durable SQLite storage |
 | AI build history | `docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md` contains selected actual user/assistant messages and a factual retrospective | Export scope and redactions are stated; suggested future prompts are clearly separate from historical messages |
 

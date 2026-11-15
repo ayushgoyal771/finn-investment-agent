@@ -10,6 +10,14 @@ Record prepared: **16 November 2026**.
 - Requirements and boundaries: [scope map](../requirements.md)
 - Verification evidence: [validation note](../validation.md)
 
+## Current update: public demo access
+
+After the earlier token-protected deployment, the user requested direct public access:
+
+> when I copy live prototype link in chrome why it is asking sever access token I don't want this it should open normally without asking token
+
+The app now supports explicit `FINN_PUBLIC_DEMO=true` for the public synthetic demonstration. It opens without a token even if an older private token is configured. Private mode remains the default for other installations. Public mode disables model calls, retains trusted-host checks, foreign-origin write rejection and rate limits, and labels the shared workspace publicly. The updated check result is **89 tests: 78 Python and 11 DOM tests**. The earlier 84-test results and token instructions below are historical, not the current public-demo access instructions.
+
 ## 1. What this record contains
 
 This document has three distinct parts: a factual retrospective, selected actual messages from the coding chat, and a separately labelled collection of suggested prompts for future work.

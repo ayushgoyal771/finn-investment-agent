@@ -8,7 +8,7 @@ This repository is the **Founding AI Engineer** submission, with working **Push,
 
 **[Live demo](https://finn-investment-agent-ayush.onrender.com)** · **[Source repository](https://github.com/ayushgoyal771/finn-investment-agent)**
 
-The demo uses Render's free tier and requires the owner's workspace access token. Its SQLite state can reset when the service sleeps or restarts. Live NSE filings and transcript research were verified from the cloud; Yahoo currently returns HTTP 429 there, and a large annual report timed out. The historical demonstration remains available without external data access.
+The demo uses Render's free tier and opens directly without a login or access token. Explicit public-demo mode uses synthetic profiles and shared workspace state; model calls are disabled. Its SQLite state can reset when the service sleeps or restarts. Live NSE filings and transcript research were verified from the cloud; Yahoo currently returns HTTP 429 there, and a large annual report timed out. The historical demonstration remains available without external data access.
 
 The application is one Python service with a buildless HTML/CSS/JavaScript frontend. No frontend build, account, API key, or paid service is needed for the complete demonstration.
 
@@ -69,7 +69,11 @@ Copy `.env.example` to `.env`, set `OPENAI_API_KEY` on the server, and restart. 
 
 The response uses a strict schema. Each claim requires valid retrieved source identifiers; malformed, incomplete or uncited output is rejected. This validates provenance identifiers, **not factual entailment**. The UI explicitly labels model interpretation for review. There are no autonomous agents, trading tools or model calls during feed refresh. Without a key, FINN provides evidence retrieval and curated historical briefs rather than pretending to run a model.
 
-## Private access and phone use
+## Public demo and private access
+
+The published demo uses `FINN_PUBLIC_DEMO=true`, so it opens normally in any browser without credentials. This makes the synthetic workspace public, including shared saved signals, preferences and contact dates. Model synthesis is disabled even if a key is present. Use only synthetic profiles and public evidence in this mode.
+
+Private/local installations keep `FINN_PUBLIC_DEMO=false` (the default). Token protection remains available as described below.
 
 Default binding is loopback. For another device on your trusted local network, configure `.env`:
 

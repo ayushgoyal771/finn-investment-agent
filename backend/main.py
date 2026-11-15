@@ -55,11 +55,11 @@ def create_app(config=None, providers_factory=Providers):
     async def guard(request: Request, call_next):
         path = request.url.path
         if path.startswith("/api/") and path != "/api/health":
-            if config.access_token:
+            if config.access_token and not config.public_demo:
                 supplied = request.headers.get("authorization", "")
                 if not hmac.compare_digest(supplied.encode(), ("Bearer " + config.access_token).encode()):
                     return JSONResponse({"detail": "Enter the server access token to unlock FINN."}, status_code=401)
-            elif request.client and request.client.host not in {"127.0.0.1", "::1", "testclient"}:
+            elif not config.public_demo and request.client and request.client.host not in {"127.0.0.1", "::1", "testclient"}:
                 return JSONResponse({"detail": "Remote access requires FINN_ACCESS_TOKEN."}, status_code=403)
             if request.method not in {"GET", "HEAD", "OPTIONS"}:
                 origin = request.headers.get("origin")
@@ -95,7 +95,9 @@ def create_app(config=None, providers_factory=Providers):
 
     @app.get("/api/health")
     async def health():
-        return {"status": "ok", "auth_required": bool(config.access_token), "model_available": bool(config.openai_key), "version": "1.0.0"}
+        return {"status": "ok", "auth_required": bool(config.access_token) and not config.public_demo,
+                "public_demo": config.public_demo, "model_available": bool(config.openai_key) and not config.public_demo,
+                "version": "1.0.0"}
 
     @app.get("/api/brief")
     async def brief(mode: str = Query("demo", pattern="^(demo|live)$"), hours: int = Query(24, ge=1, le=168), saved: bool = False):
@@ -126,6 +128,8 @@ def create_app(config=None, providers_factory=Providers):
 
     @app.post("/api/research")
     async def run_research(value: ResearchRequest):
+        if config.public_demo and value.use_model:
+            raise HTTPException(403, "Model synthesis is disabled in the public demo. Primary-source research remains available.")
         async def limited_research():
             async with app.state.research_slots:
                 return await research(value, app.state.providers, config, app.state.intelligence.contacts())

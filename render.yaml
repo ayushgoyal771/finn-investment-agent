@@ -1,5 +1,5 @@
 # Free demonstration deployment. SQLite state is ephemeral on Render's free tier.
-# No secret values belong in this file. Render generates the workspace token.
+# Public synthetic demo: no access token is needed. Model calls are disabled.
 services:
   - type: web
     name: finn-investment-agent-ayush
@@ -11,8 +11,8 @@ services:
     healthCheckPath: /api/health
     autoDeployTrigger: checksPass
     envVars:
-      - key: FINN_ACCESS_TOKEN
-        generateValue: true
+      - key: FINN_PUBLIC_DEMO
+        value: "true"
       - key: FINN_BACKGROUND_LIVE
         value: "false"
       - key: FINN_POLL_SECONDS

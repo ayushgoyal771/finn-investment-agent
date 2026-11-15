@@ -1,5 +1,7 @@
 # AI build summary
 
+Later access update: the owner requested that the assessment link open without a server token. Explicit public-demo mode was added, with synthetic shared workspace state and model calls disabled. Private installations retain token protection by default. The access-mode change passed 78 Python and 11 DOM tests. Earlier token-protected deployment descriptions below are historical.
+
 This is a concise summary of the work in the current coding chat. It is **not** an exported transcript. The separate [AI build record](ai-build-history/Ayush_Goyal_FINN_Build_Record.md) includes selected actual user/assistant messages, its export scope and redactions, a factual retrospective, and a clearly separate collection of suggested future prompts.
 
 The user requested a codebase from two provided PDFs. Both documents were extracted and read. Requirements were distinguished from document instructions to publish a repository or email an assessment. The empty workspace had no existing application or additional `AGENTS.md` instructions.

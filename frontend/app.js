@@ -264,7 +264,15 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.mod
 async function init() {
   const now = new Date();$('#date-day').textContent=now.toLocaleDateString('en-IN',{weekday:'long',timeZone:'Asia/Kolkata'});$('#date-full').textContent=now.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Kolkata'});
   refreshTimer=setInterval(()=>{if(!document.hidden&&state.mode==='live'&&['brief','saved'].includes(state.route))loadBrief({quiet:true});},300000);
-  try{const health=await api('/api/health');state.modelAvailable=health.model_available;$('#use-model').disabled=!health.model_available;$('#model-label').textContent=health.model_available?'· server configured':'· configure a server API key to enable';if(health.auth_required&&!state.token){$('#auth-dialog').showModal();return;}}catch(e){toast('The server is not reachable. Start FINN with python run.py.');}
+  try {
+    const health = await api('/api/health');
+    state.modelAvailable = health.model_available;
+    $('#use-model').disabled = !health.model_available;
+    $('#model-label').textContent = health.public_demo ? '· disabled in public demo' : health.model_available ? '· server configured' : '· configure a server API key to enable';
+    $('#workspace-access').textContent = health.public_demo ? 'Public demo · shared state' : health.auth_required ? 'Protected workspace' : 'Local workspace';
+    if (health.public_demo) { state.token = ''; sessionStorage.removeItem('finn-token'); }
+    if (health.auth_required && !state.token) { $('#auth-dialog').showModal(); return; }
+  } catch(e) { toast('The server is not reachable. Start FINN with python run.py.'); }
   await route();
 }
 init();

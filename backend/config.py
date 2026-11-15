@@ -28,6 +28,7 @@ def resolve_allowed_hosts(environ=None):
 class Config:
     db_path: Path = Path(os.getenv("FINN_DB_PATH", str(ROOT / "data" / "finn.db")))
     access_token: str = os.getenv("FINN_ACCESS_TOKEN", "")
+    public_demo: bool = os.getenv("FINN_PUBLIC_DEMO", "false").lower() == "true"
     openai_key: str = os.getenv("OPENAI_API_KEY", "")
     model: str = os.getenv("FINN_MODEL", "gpt-4.1-mini")
     poll_seconds: int = max(300, int(os.getenv("FINN_POLL_SECONDS", "900")))
