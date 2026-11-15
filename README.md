@@ -4,7 +4,7 @@ A responsive investment research prototype by **Ayush Goyal** for the **ENAM Fou
 
 This repository is the **Founding AI Engineer** submission, with working **Push, Pull and Network** flows and network context inside both the signals and research views. The source brief is `ENAM_Founding AI Engineer Build Challenge_Main.pdf`, with the announcement/glossary companion as reference. The submission subject is **IIT Delhi – Founding AI Engineer - 2027**.
 
-**[AI build record](docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md)** · **[Architecture and privacy](docs/architecture.md)** · **[Scope and limitations](docs/requirements.md)** · **[Covering note](docs/covering-note.md)**
+**[AI build record](docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md)** · **[Retrospective and rewritten prompt examples](docs/ai-build-history/Ayush_Goyal_FINN_Development_Retrospective.md)** · **[Architecture and privacy](docs/architecture.md)** · **[Scope and limitations](docs/requirements.md)** · **[Covering note](docs/covering-note.md)**
 
 **[Live demo](https://finn-investment-agent-ayush.onrender.com)** · **[Source repository](https://github.com/ayushgoyal771/finn-investment-agent)**
 
