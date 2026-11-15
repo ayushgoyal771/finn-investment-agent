@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="FINN — a quieter view of your portfolio. Primary-source research, meaningful signals and the people who can help.">
+  <title>FINN · Your investment fieldnotes</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="m10.5 7.5-4 7.5m7-7.5 4 7.5M8 18h8"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h5m4 0h7M4 12h10m4 0h2M4 18h2m4 0h10"/><circle cx="11" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="m3 16 5-6 4 4 8-10M15 4h5v5M3 21h18"/></symbol>
+  </svg>
+
+  <aside class="sidebar">
+    <a href="#brief" class="brand" aria-label="FINN home">finn<span class="brand-dot">.</span></a>
+    <div class="workspace-label">THE INVESTOR’S FIELDNOTES</div>
+    <nav aria-label="Main navigation">
+      <a href="#brief" data-nav="brief" class="nav-item active"><svg><use href="#i-grid"/></svg><span>Today’s brief</span><span id="nav-count" class="nav-count">—</span></a>
+      <a href="#research" data-nav="research" class="nav-item"><svg><use href="#i-search"/></svg><span>Research</span></a>
+      <a href="#network" data-nav="network" class="nav-item"><svg><use href="#i-network"/></svg><span>Your network</span></a>
+      <a href="#saved" data-nav="saved" class="nav-item"><svg><use href="#i-bookmark"/></svg><span>Saved signals</span></a>
+    </nav>
+    <div class="sidebar-note"><span class="small-line"></span><p>A little less information.<br>A little more insight.</p></div>
+    <button class="nav-item preferences-button" data-action="settings"><svg><use href="#i-sliders"/></svg><span>Alert preferences</span></button>
+    <div class="profile"><span class="avatar avatar-dark">YO</span><div><strong>Your workspace</strong><small><svg><use href="#i-lock"/></svg> Local & private</small></div></div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb"><span id="breadcrumb">Workspace</span><span>/</span><strong id="page-name">Today’s brief</strong></div>
+      <a href="#brief" class="mobile-brand brand" aria-label="FINN home">finn<span class="brand-dot">.</span></a>
+      <div class="top-actions"><span class="source-dot"></span><label class="sr-only" for="data-mode">Data source mode</label><select id="data-mode"><option value="demo">Demo workspace</option><option value="live">Live sources</option></select><button class="icon-button" data-action="refresh" aria-label="Refresh current view" title="Refresh current view"><svg><use href="#i-refresh"/></svg></button></div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <div id="global-notice" class="notice demo-notice"><span class="notice-dot"></span><span>Demo workspace <span class="notice-detail">· Fictional signals and people. Research uses attributed FY2025 evidence.</span></span><a href="#research">Explore the evidence <span aria-hidden="true">↗</span></a></div>
+
+      <section id="view-brief" class="view">
+        <div class="page-heading"><div><p class="eyebrow">YOUR DAILY ADVANTAGE</p><h1>Less noise. <em>More perspective.</em></h1><p class="page-subtitle">What changed, why it matters, and who can help you understand it.</p></div><div class="date-block"><span class="date-day" id="date-day"></span><span id="date-full"></span></div></div>
+        <div id="brief-stats" class="stats-strip" aria-label="Brief summary"></div>
+        <div class="brief-layout">
+          <div class="feed-column">
+            <div class="section-heading"><div><p class="eyebrow">CURATED FOR YOUR PORTFOLIO</p><h2 id="feed-heading">The signals that matter<span class="small-dot">.</span></h2></div><label class="window-picker"><span class="sr-only">Digest time window</span><select id="time-window"><option value="24">Last 24 hours</option><option value="48">Last 48 hours</option><option value="168">Last 7 days</option></select></label></div>
+            <div class="filter-row" role="group" aria-label="Signal filters"><button class="filter active" data-filter="all" aria-pressed="true">All signals</button><button class="filter" data-filter="filings" aria-pressed="false">Filings</button><button class="filter" data-filter="market" aria-pressed="false">Market moves</button><span id="feed-updated" class="feed-updated"></span></div>
+            <div id="brief-errors" aria-live="polite"></div>
+            <div id="signal-feed" aria-live="polite"><div class="loading-card">Preparing your fieldnotes…</div></div>
+            <details class="routine-wrap" id="routine-wrap"><summary><span><span class="routine-icon">≋</span> The quieter updates <span id="routine-count"></span></span><span class="details-toggle">Expand +</span></summary><p class="routine-help">Lower-priority disclosures, kept in view without competing for your attention.</p><div id="routine-feed"></div></details>
+            <div class="feed-footer"><span class="tiny-leaf">✳</span><p>Designed to inform your next question.<br><span>Every signal is a starting point for diligence.</span></p></div>
+          </div>
+          <aside class="context-column" aria-label="Network context and portfolio">
+            <div class="network-promo"><p class="eyebrow">YOUR QUIET ADVANTAGE</p><h2>The right person.<br><em>At the right moment.</em></h2><p>Your network already holds more context than you think.</p><svg viewBox="0 0 280 175" class="network-illustration" role="img" aria-label="Connections between you and your professional network"><circle class="orbit" cx="140" cy="86" r="69"/><circle class="orbit" cx="140" cy="86" r="40"/><path class="graph-line" d="m140 86-81-45m81 45 88-32m-88 32 41 61m-41-61-75 54"/><circle class="graph-node" cx="59" cy="41" r="20"/><text x="59" y="46">MS</text><circle class="graph-node node-muted" cx="228" cy="54" r="18"/><text x="228" y="59">AR</text><circle class="graph-node node-muted" cx="181" cy="147" r="18"/><text x="181" y="152">NM</text><circle class="graph-node node-muted" cx="65" cy="140" r="14"/><text x="65" y="144" class="small-node-text">VS</text><circle class="you-node" cx="140" cy="86" r="26"/><text class="you-text" x="140" y="91">YOU</text><circle class="spark-dot" cx="245" cy="115" r="3"/><circle class="spark-dot" cx="110" cy="16" r="2"/></svg><a class="promo-link" href="#network">Find your next conversation <svg><use href="#i-arrow"/></svg></a><span class="promo-footnote">8 synthetic profiles · 7 areas of expertise</span></div>
+            <div class="portfolio-panel"><div class="section-heading compact"><h3>On your radar</h3><span class="muted">EOD</span></div><div id="radar-list"></div><button class="text-button full" data-action="portfolio">View all 18 companies <svg><use href="#i-arrow"/></svg></button><p class="radar-note" id="radar-note">Synthetic daily closes for the demo.</p></div>
+            <div class="source-note"><svg><use href="#i-check"/></svg><p>Know where it comes from.<br><span>Source labels, periods and gaps stay visible.</span></p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-research" class="view" hidden>
+        <div class="page-heading"><div><p class="eyebrow">PRIMARY SOURCES. BETTER QUESTIONS.</p><h1>Go deeper. <em>Stay grounded.</em></h1><p class="page-subtitle">Company reports and management’s own words, with a path back to the source.</p></div><span class="outline-label">PULL / RESEARCH</span></div>
+        <form id="research-form" class="research-form"><div class="research-input-row"><div class="field ticker-field"><label for="research-symbol">NSE ticker</label><input id="research-symbol" name="symbol" value="ASIANPAINT" maxlength="33" placeholder="e.g. ASIANPAINT" required autocomplete="off" list="ticker-options"><datalist id="ticker-options"></datalist></div><div class="field"><label for="research-mode">Evidence source</label><select id="research-mode"><option value="demo">Historical packs · FY2025</option><option value="live">Live discovery · any NSE ticker</option></select></div></div><div class="field"><label for="research-question">What would you like to understand?</label><textarea id="research-question" name="question" rows="2" maxlength="600" minlength="3" required>Where do the growth narrative and the numbers diverge?</textarea></div><div class="research-form-footer"><label class="check-label"><input type="checkbox" id="use-model"> Add model synthesis <span id="model-label">· optional server API key</span></label><button class="primary-button" type="submit" id="research-submit">Build an evidence brief <svg><use href="#i-arrow"/></svg></button></div></form>
+        <div class="research-starters"><span>START WITH</span><button data-research="ASIANPAINT">Asian Paints · volume vs. value ↗</button><button data-research="TCS">TCS · margins & growth ↗</button><button data-research="INFY">Infosys · cash quality ↗</button></div>
+        <div id="research-result" aria-live="polite"><div class="research-empty"><span class="big-asterisk">✳</span><h2>A source before a story.</h2><p>Choose a company and a question. FINN retrieves the evidence,<br class="desktop-only"> shows what’s missing, and finds someone worth talking to.</p><div class="evidence-principles"><span>01 <strong>Annual reports</strong></span><span>02 <strong>Call transcripts</strong></span><span>03 <strong>Your network</strong></span></div></div></div>
+      </section>
+
+      <section id="view-network" class="view" hidden>
+        <div class="page-heading"><div><p class="eyebrow">THE CONTEXT YOU ALREADY HAVE</p><h1>Someone you know. <em>Something you don’t.</em></h1><p class="page-subtitle">Find experience, trace a connection, or find a thoughtful reason to reconnect.</p></div><span class="outline-label">NETWORK / PRIVATE</span></div>
+        <form id="network-form" class="network-search"><svg><use href="#i-search"/></svg><label for="network-query" class="sr-only">Search your network by expertise, company or person</label><input id="network-query" placeholder="Who can help me understand specialty chemicals?" maxlength="300"><button class="primary-button" type="submit">Find context <svg><use href="#i-arrow"/></svg></button></form>
+        <div class="theme-filters"><span>EXPLORE A THEME</span><button data-theme="specialty chemicals">Specialty chemicals</button><button data-theme="IT services cash">IT services</button><button data-theme="semiconductors">Semiconductors</button><button data-theme="rural lending">Rural lending</button><button data-theme="paints pricing">Paints & demand</button></div>
+        <div class="network-section-heading"><h2 id="network-heading">Your circle of context</h2><button class="text-button" data-action="export-network">Export profiles <svg><use href="#i-up-right"/></svg></button></div>
+        <p class="network-disclaimer">All profiles and relationships below are synthetic. Career overlap indicates possible context; it does not establish a personal relationship.</p>
+        <div id="network-results" class="contact-grid" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer class="app-footer"><span>FINN <span class="footer-separator">/</span> An investor’s quiet advantage</span><span>Research prototype · No investment recommendations</span></footer>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#brief" data-nav="brief" class="active"><svg><use href="#i-grid"/></svg><span>Brief</span></a><a href="#research" data-nav="research"><svg><use href="#i-search"/></svg><span>Research</span></a><a href="#network" data-nav="network"><svg><use href="#i-network"/></svg><span>Network</span></a><a href="#saved" data-nav="saved"><svg><use href="#i-bookmark"/></svg><span>Saved</span></a><button data-action="settings"><svg><use href="#i-sliders"/></svg><span>Rules</span></button></nav>
+  <dialog id="detail-dialog" class="detail-dialog"><div class="dialog-header"><span class="eyebrow" id="dialog-label">SIGNAL NOTES</span><button class="icon-button" data-action="close-dialog" aria-label="Close details"><svg><use href="#i-close"/></svg></button></div><div id="dialog-body"></div></dialog>
+  <dialog id="settings-dialog" class="settings-dialog"><div class="dialog-header"><span class="eyebrow">MAKE THE SIGNAL YOURS</span><button class="icon-button" data-action="close-settings" aria-label="Close preferences"><svg><use href="#i-close"/></svg></button></div><h2>Your attention, your rules.</h2><p>Choose what deserves an alert. Every filing still appears in your digest.</p><form id="settings-form"><div class="settings-fields"><div class="field"><label for="price-rule">Daily price move beyond ± <output id="price-output">3%</output></label><input type="range" id="price-rule" min="0.5" max="15" step="0.5" value="3"><small>Absolute close-to-close price change.</small></div><div class="field"><label for="volume-rule">Daily volume above <output id="volume-output">2×</output></label><input type="range" id="volume-rule" min="1.1" max="6" step="0.1" value="2"><small>Compared with the prior 20 completed sessions.</small></div></div><fieldset><legend>Announcement alerts</legend><div id="category-options" class="category-options"></div></fieldset><p class="settings-note">Alerts appear in this app while it is open. Live sources are polled every 5 minutes; these are end-of-day prices, not intraday data.</p><button type="submit" class="primary-button full" id="save-settings">Save preferences <svg><use href="#i-check"/></svg></button><p id="settings-error" class="form-error" role="alert"></p></form></dialog>
+  <dialog id="auth-dialog" class="auth-dialog"><p class="eyebrow">PRIVATE WORKSPACE</p><h2>Welcome to FINN.</h2><p>Enter the access token configured on your server.</p><form id="auth-form"><label class="sr-only" for="access-token">Server access token</label><input id="access-token" type="password" placeholder="Server access token" required autocomplete="current-password"><button class="primary-button full" type="submit">Unlock workspace <svg><use href="#i-lock"/></svg></button><p class="form-error" id="auth-error" role="alert"></p></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Free demonstration deployment. SQLite state is ephemeral on Render's free tier.
+# No secret values belong in this file. Render generates the workspace token.
+services:
+  - type: web
+    name: finn-fieldnotes
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt -c backend/requirements.lock
+    startCommand: python run.py --host 0.0.0.0
+    healthCheckPath: /api/health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: FINN_ACCESS_TOKEN
+        generateValue: true
+      - key: FINN_BACKGROUND_LIVE
+        value: "false"
+      - key: FINN_POLL_SECONDS
+        value: "900"
+      - key: PYTHONUNBUFFERED
+        value: "1"
