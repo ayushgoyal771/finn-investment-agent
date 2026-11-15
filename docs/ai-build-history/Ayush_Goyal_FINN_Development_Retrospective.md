@@ -1,7 +1,9 @@
 # Ayush Goyal - FINN development retrospective and prompt guide
 
-**Challenge:** ENAM Founding AI Engineer  
-**Prepared:** 16 November 2026  
+**Challenge:** ENAM Founding AI Engineer
+
+**Prepared:** 16 November 2026
+
 **Author:** Ayush Goyal
 
 - Live application: https://finn-investment-agent-ayush.onrender.com
