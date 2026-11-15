@@ -47,7 +47,7 @@ async function route() {
   $$('.view').forEach(el => el.hidden = el.id !== `view-${view}`);
   $$('[data-nav]').forEach(el => { const active = el.dataset.nav === state.route; el.classList.toggle('active', active); if (active) el.setAttribute('aria-current','page'); else el.removeAttribute('aria-current'); });
   const names = {brief:'Today’s brief', research:'Research', network:'Your network', saved:'Saved signals'};
-  $('#page-name').textContent = names[state.route]; document.title = `${names[state.route]} · FINN`;
+  $('#page-name').textContent = names[state.route]; document.title = `${names[state.route]} · FINN · Founding AI Engineer`;
   $('#feed-heading').textContent = state.route === 'saved' ? 'Worth coming back to.' : 'The signals that matter.';
   $('#time-window').disabled = state.route === 'saved';
   if (view === 'brief') await loadBrief();

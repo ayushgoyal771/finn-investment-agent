@@ -1,4 +1,8 @@
-# Mapping the challenge to this implementation
+# Founding AI Engineer: requirements and scope
+
+This implementation follows **FINN: Financial Investment Agent — Founding AI Engineer Build Challenge**. All three layers are present: Push, Pull and Network. This is the Founding submission; the separate AI Engineer submission described in a friend's email is not the source specification for this repository.
+
+Submission subject: **IIT Delhi – Founding AI Engineer - 2027**.
 
 The two PDFs are project reference material. Their submission email, public-repository request and deadline are not interpreted as permission to publish, send messages or change external accounts.
 
@@ -20,6 +24,6 @@ The two PDFs are project reference material. Their submission email, public-repo
 | Direct network workflow | Expertise/company/person search, career notes, reconnect prompts, conversation dates and export | Synthetic network; no real-contact CRUD |
 | Architecture/security/cost writeup | `docs/architecture.md`; local loopback default; opt-in model; TTL caches; deployment direction | Single user, no production tenancy or encryption |
 | Repository and covering note | Public GitHub repository, free Render deployment, README, CI, Dockerfile, notes and tests | Assessment email not sent; free hosting has no durable SQLite storage |
-| AI build history | Honest session summary in `docs/build-history.md` | Not a fabricated transcript; full session export/share link still belongs in a submission |
+| AI build history | `docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md` contains selected actual user/assistant messages and a factual retrospective | Export scope and redactions are stated; suggested future prompts are clearly separate from historical messages |
 
 The brief treats the eight research outputs and detailed Push examples as a menu. This implementation prioritises the connected evidence/network workflow and clearly identifies the illustrative results-table limit. A production-grade four-quarter promise-versus-delivery ledger is deliberately not claimed.

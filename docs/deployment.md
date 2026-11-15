@@ -1,4 +1,6 @@
-# Free Render deployment
+# Founding AI Engineer: free Render deployment
+
+This service deploys Ayush Goyal's **ENAM Founding AI Engineer** prototype from this repository's `main` branch. The existing repository and service URLs are retained. The app metadata and footer identify the Founding challenge, and the hosted workflows include Push, Pull and the integrated Network layer.
 
 The owner selected Render's **$0 free demo hosting**. This deployment has one Python web service and no paid disk, database, worker or model integration. SQLite changes can be lost when the free service sleeps, restarts or redeploys. The bundled synthetic demonstration remains available after startup.
 

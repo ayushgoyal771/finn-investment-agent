@@ -1,33 +1,43 @@
-# Covering-note draft
+# Founding AI Engineer covering note
 
-Subject requested by the challenge: `IIT Delhi – Founding AI Engineer - 2027`
+This is the public covering-note draft for **Ayush Goyal**. No assessment email has been sent. The private email copy includes contact details and a reminder to insert the workspace token; credentials are not published here.
 
-This is a draft for the owner to review and send. No email has been sent. The source repository and free Render demo below have been published.
+**To:** assessment@enam.com
+
+**Subject:** IIT Delhi – Founding AI Engineer - 2027
 
 ---
 
-Hello ENAM team,
+Hi ENAM Team,
 
-I built FINN as an investor’s fieldnotes: a quieter, connected workflow from an important portfolio event to primary evidence and the person best placed to add context.
+My name is Ayush Goyal. Please find my submission for the Founding AI Engineer Build Challenge.
 
-The prototype watches an 18-company mock portfolio, ranks disclosures, collapses routine paperwork, and lets the investor choose material-announcement and EOD price/volume thresholds. Network context is embedded in signal details and research. A fictional CFO appointment demonstrates an explicitly attested second-degree introduction; a results scenario demonstrates Revenue, EBITDA, PBT and PAT comparisons. These examples are labelled synthetic throughout.
+- Live prototype: https://finn-investment-agent-ayush.onrender.com
+- GitHub repository: https://github.com/ayushgoyal771/finn-investment-agent
+- AI build history: Attached as Ayush_Goyal_FINN_Build_Record.md. It is also available in the repository under docs/ai-build-history.
+- Demo access: protected by a workspace token, to be supplied privately to the reviewers.
 
-Research uses company annual reports and transcripts. Three compact FY2025 packs make the demonstration work immediately; live discovery works independently for arbitrary NSE tickers where primary PDFs are available. I exercised HCLTECH outside the demonstration set. Source access failures and evidence gaps are visible. Screener is only a link directory; broker notes, news and its commentary never become research evidence.
+I built FINN, a mobile-first investment research prototype with three connected workflows: portfolio signals, company research and professional network context.
 
-I chose a single Python service, SQLite, and a responsive buildless frontend to keep setup and operating cost low. Deterministic rules handle routing, ranking, numerical comparisons and network matching. Optional small-model synthesis is requested explicitly, receives retrieved public evidence, requires cited claim IDs and keeps the private graph out of the payload. It is labelled an interpretation for review; citation validity is not represented as proof of factual correctness.
+The Push workflow brings together announcements for an 18-company mock portfolio and end-of-day price and volume alerts. Users can choose the time window, change thresholds and save important signals. A clearly labelled fictional CFO example shows the person's career and a second-degree connection through the investor's network.
 
-All network profiles are invented. The local prototype uses loopback by default and token protection for remote access. The architecture note covers provenance, refresh/cache policies, consent, retention, tenant isolation and the cloud design I would use before handling a real investor’s network.
+The Pull workflow uses annual reports and earnings-call transcripts, with source links and page references. It includes historical FY2025 evidence packs for TCS, Infosys and Asian Paints, plus live document discovery for other NSE tickers where documents are available. It shows missing evidence and source errors. Screener is used to find document links, not as research evidence.
 
-I deliberately left out intraday prices, mobile notification delivery, real-profile ingestion, OCR and comprehensive arbitrary-table normalization. The comparative-results example is a demonstration rather than a claim of automated filing extraction. I would next build a reconciled quarterly fact store and a reviewable management-guidance ledger, then add licensed feeds, authenticated multi-tenant storage and extraction evaluation.
+The Network workflow includes eight synthetic profiles with career history, expertise search, relationship paths and reconnect prompts. Relevant people also appear within signals and research.
 
-Automated checks and source probes are recorded in the validation note. The deployed app was checked in desktop and phone-sized browser viewports. On the free cloud instance, NSE filings and live transcript research work; Yahoo daily-bar requests currently return HTTP 429, and a large annual report timed out. The historical demonstration works without these external requests. Free hosting can sleep and reset saved state.
+I used Python and FastAPI with SQLite and a responsive HTML, CSS and JavaScript interface. One Render service runs the frontend and backend. Separate modules handle sources, research, signals, storage and network matching. Caching and bounded document processing keep the prototype small and inexpensive.
 
-Prototype: https://finn-investment-agent-ayush.onrender.com
+Rules handle calculations and ranking. Optional OpenAI synthesis is implemented using retrieved public evidence and citation checks. No model key is configured on the deployment, and I have not verified a credentialed model call. There are no autonomous agents or trading actions.
 
-Public repository: https://github.com/ayushgoyal771/finn-investment-agent
+All profiles and relationships are synthetic. The hosted app uses a workspace access token, and private network profiles are excluded from model input. This is a single shared workspace; production use would need individual accounts, tenant isolation, encrypted storage and consent controls.
 
-AI session history: [attach authentic coding-session export or owner-created share link]
+The recorded checks passed 84 tests: 74 Python tests and 10 DOM integration tests. Hosted checks also covered desktop and phone-sized browser views. During verification, NSE filings and transcript research worked, but Yahoo prices were rate-limited from Render and a large annual report timed out. Free hosting may take time to wake up and can reset saved data.
 
-Regards,
+I left out real-contact import, OCR, intraday data, mobile notification delivery and complete financial-table extraction. The quarterly-results comparison is a labelled synthetic example; a complete four-quarter guidance-versus-delivery tracker is not implemented. My next steps would be more reliable data feeds, stronger extraction checks, a quarterly fact store, a guidance tracker and persistent storage.
 
-[Your name]
+I used ChatGPT/Codex for development, troubleshooting and deployment. The attachment contains selected actual messages and a factual build summary. Suggested prompts for future work are clearly marked separately; they are not presented as earlier conversation.
+
+Thank you for reviewing my submission. I would be happy to explain the implementation and design choices.
+
+Best regards,
+Ayush Goyal

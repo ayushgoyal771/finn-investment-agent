@@ -51,9 +51,9 @@ Availability summaries are in ignored `artifacts/live-probe.json` and `artifacts
 - The local-origin preview was declined during the initial build; subsequent cloud browser QA was authorized and completed as described above. A physical phone, mobile Safari, a formal accessibility audit and screen-reader coverage remain unverified.
 - Optional model synthesis has schema/citation tests and a real integration implementation, but no credentialed model request was made. Model quality, account availability and pricing were not tested.
 - Docker execution remains unverified. GitHub Actions and the native Render Python deployment have run successfully.
-- No assessment email was sent. The covering note is still an owner-reviewable draft; authentic AI session history must be attached separately for submission.
+- No assessment email was sent. The covering note is still an owner-reviewable draft. A selected authentic AI conversation and retrospective is included in `docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md`; its scope, redactions and separate suggested-prompt section are explicit.
 - Live research is a cited-excerpt workflow. The synthetic results-comparison scenario is not a claim that arbitrary real filing tables have been automatically reconciled.
 
 ## Before external submission
 
-Review the deployed app and its fictional-data labels on a physical phone, account for the disclosed free-tier/provider limitations, exercise a credentialed synthesis only if desired, and attach authentic AI session history before sending a submission. The repository and live demo are already published; email submission remains the owner's action.
+Review the deployed app and its fictional-data labels on a physical phone, account for the disclosed free-tier/provider limitations, exercise a credentialed synthesis only if desired, and attach the included AI build record before sending the Founding AI Engineer submission. The repository and live demo are already published; email submission remains the owner's action.

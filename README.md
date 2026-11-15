@@ -1,6 +1,10 @@
-# FINN · An investor’s quiet advantage
+# FINN · ENAM Founding AI Engineer
 
-A responsive investment research prototype for the ENAM Founding AI Engineer build challenge. FINN connects **what changed**, **what the primary evidence says**, and **who in your network can add context**.
+A responsive investment research prototype by **Ayush Goyal** for the **ENAM Founding AI Engineer Build Challenge**. FINN connects **what changed**, **what the primary evidence says**, and **who in your network can add context**.
+
+This repository is the **Founding AI Engineer** submission, with working **Push, Pull and Network** flows and network context inside both the signals and research views. The source brief is `ENAM_Founding AI Engineer Build Challenge_Main.pdf`, with the announcement/glossary companion as reference. The submission subject is **IIT Delhi – Founding AI Engineer - 2027**.
+
+**[AI build record](docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md)** · **[Architecture and privacy](docs/architecture.md)** · **[Scope and limitations](docs/requirements.md)** · **[Covering note](docs/covering-note.md)**
 
 **[Live demo](https://finn-investment-agent-ayush.onrender.com)** · **[Source repository](https://github.com/ayushgoyal771/finn-investment-agent)**
 
@@ -138,4 +142,4 @@ docs/              Architecture, scope map, covering note and build summary
 
 Live research provides cited excerpts and optional model interpretation. It does not reliably normalize arbitrary PDF financial tables, build a four-quarter promise-versus-delivery ledger, or calculate every ratio in the reference glossary. The comparative-results demo uses synthetic data, rather than mislabelling a hand-entered table as extracted. Network data is synthetic and there is no LinkedIn scraping. Scanned PDFs need OCR, which is not implemented.
 
-The source repository and free Render demo are published at the links above. No assessment email has been sent. A [covering-note draft](docs/covering-note.md), [requirements map](docs/requirements.md), and [honest build summary](docs/build-history.md) are included for the handoff.
+The source repository and free Render demo are published at the links above. No assessment email has been sent. A [covering-note draft](docs/covering-note.md), [requirements map](docs/requirements.md), [build summary](docs/build-history.md), and [selected authentic AI conversation with a retrospective](docs/ai-build-history/Ayush_Goyal_FINN_Build_Record.md) are included for the handoff. The build record separates actual messages from suggested future prompts; it does not present new prompts as historical conversation.
