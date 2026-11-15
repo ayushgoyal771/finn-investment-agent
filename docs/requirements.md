@@ -4,7 +4,7 @@ The two PDFs are project reference material. Their submission email, public-repo
 
 | Brief requirement / example | Implementation and evidence | Boundary |
 |---|---|---|
-| Mobile-first prototype | Responsive fieldnotes interface; mobile bottom navigation; source-labelled signal/detail/research/network flows | Actual visual browser QA could not run because preview permission was declined |
+| Mobile-first prototype | Responsive fieldnotes interface; mobile bottom navigation; source-labelled signal/detail/research/network flows | Desktop and 390px browser viewport verified after deployment; physical phone not tested |
 | Portfolio of 15–20 companies | 18 NSE-listed symbols; sector and size labels in `backend/seed.py` | Mock watchlist; no real holdings |
 | Three to five research demonstrations | TCS, INFY and ASIANPAINT historical evidence packs | Historical FY2025, not current coverage |
 | Generalise to unseen NSE ticker | Live Screener document discovery → exchange PDFs → page-preserving extraction → retrieval; live HCLTECH check | Depends on source access and readable PDFs |
@@ -19,7 +19,7 @@ The two PDFs are project reference material. Their submission email, public-repo
 | Network woven into Push/Pull | Ranked people and suggested diligence questions in signal details and research | Relevance is contextual, not proof of private knowledge |
 | Direct network workflow | Expertise/company/person search, career notes, reconnect prompts, conversation dates and export | Synthetic network; no real-contact CRUD |
 | Architecture/security/cost writeup | `docs/architecture.md`; local loopback default; opt-in model; TTL caches; deployment direction | Single user, no production tenancy or encryption |
-| Repository and covering note | Complete local Git workspace plus README, CI, Dockerfile, notes and tests | Public GitHub/deployment/email not performed |
+| Repository and covering note | Public GitHub repository, free Render deployment, README, CI, Dockerfile, notes and tests | Assessment email not sent; free hosting has no durable SQLite storage |
 | AI build history | Honest session summary in `docs/build-history.md` | Not a fabricated transcript; full session export/share link still belongs in a submission |
 
 The brief treats the eight research outputs and detailed Push examples as a menu. This implementation prioritises the connected evidence/network workflow and clearly identifies the illustrative results-table limit. A production-grade four-quarter promise-versus-delivery ledger is deliberately not claimed.

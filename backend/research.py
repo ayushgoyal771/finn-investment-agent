@@ -118,7 +118,9 @@ async def research(request, providers, config, contacts):
             raise SourceError("This ticker has no bundled historical evidence pack. Switch to Live sources to research any NSE ticker.")
         facts = rank_facts(pack["facts"], request.question)
         name, period, metrics = pack["name"], pack["period"], pack["metrics"]
-        metrics = [{**m, "url": next(f["url"] for f in pack["facts"] if f["id"] == m["source_id"])} for m in metrics]
+        metrics = [{**m, "url": source["url"], "source_kind": source["kind"]}
+                   for m in metrics
+                   for source in pack["facts"] if source["id"] == m["source_id"]]
         thesis, questions = pack["thesis"], pack["questions"]
         warnings.append("Historical FY2025 evidence, not a current investment assessment. Bundled evidence is a small, curated subset of the sources.")
         coverage = sorted({f["kind"] for f in pack["facts"]})

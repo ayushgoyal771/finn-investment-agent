@@ -2,7 +2,7 @@
 # No secret values belong in this file. Render generates the workspace token.
 services:
   - type: web
-    name: finn-fieldnotes
+    name: finn-investment-agent-ayush
     runtime: python
     plan: free
     region: singapore

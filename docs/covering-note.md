@@ -2,7 +2,7 @@
 
 Subject requested by the challenge: `IIT Delhi – Founding AI Engineer - 2027`
 
-This is a draft for the owner to review and send. No email has been sent and no external submission links have been created.
+This is a draft for the owner to review and send. No email has been sent. The source repository and free Render demo below have been published.
 
 ---
 
@@ -20,11 +20,11 @@ All network profiles are invented. The local prototype uses loopback by default 
 
 I deliberately left out intraday prices, mobile notification delivery, real-profile ingestion, OCR and comprehensive arbitrary-table normalization. The comparative-results example is a demonstration rather than a claim of automated filing extraction. I would next build a reconciled quarterly fact store and a reviewable management-guidance ledger, then add licensed feeds, authenticated multi-tenant storage and extraction evaluation.
 
-Automated checks and source probes are recorded in the validation note. Browser preview permission was declined in the build environment, so visual device QA remains outstanding.
+Automated checks and source probes are recorded in the validation note. The deployed app was checked in desktop and phone-sized browser viewports. On the free cloud instance, NSE filings and live transcript research work; Yahoo daily-bar requests currently return HTTP 429, and a large annual report timed out. The historical demonstration works without these external requests. Free hosting can sleep and reset saved state.
 
-Prototype: [add owner-reviewed deployment link]
+Prototype: https://finn-investment-agent-ayush.onrender.com
 
-Public repository: [add owner-reviewed GitHub link]
+Public repository: https://github.com/ayushgoyal771/finn-investment-agent
 
 AI session history: [attach authentic coding-session export or owner-created share link]
 

@@ -88,6 +88,7 @@ test('research submits the selected ticker and displays citations plus network',
   assert.ok(ctx.calls.some(c=>c.url==='/api/research'&&c.body.symbol==='ASIANPAINT'&&c.body.mode==='demo'));
   assert.ok(d.querySelectorAll('.evidence-card').length);
   assert.ok(d.querySelectorAll('.source-link').length);
+  assert.equal(d.querySelectorAll('.metric-card a')[2].textContent, 'Call transcript ↗');
   assert.match(d.querySelector('.research-side').textContent,/Vikram/);
   assert.deepEqual(ctx.errors,[]);
 });
@@ -130,4 +131,15 @@ test('remote access prompts for configured server token',async t=>{
   const ctx=await setup({auth:true});t.after(()=>ctx.dom.window.close());
   assert.equal(ctx.document.querySelector('#auth-dialog').open,true);
   assert.ok(!ctx.calls.some(c=>c.url.startsWith('/api/brief')));
+});
+
+test('changing source mode clears the previous prices while a new brief loads',async t=>{
+  const ctx=await setup();t.after(()=>ctx.dom.window.close());const d=ctx.document;
+  assert.match(d.querySelector('#radar-list').textContent,/₹/);
+  d.querySelector('#data-mode').value='live';
+  d.querySelector('#data-mode').dispatchEvent(new ctx.w.Event('change',{bubbles:true}));
+  assert.equal(d.querySelector('#radar-list').textContent,'');
+  assert.equal(d.querySelector('#brief-stats').textContent,'');
+  assert.match(d.querySelector('#signal-feed').textContent,/Preparing your fieldnotes/);
+  await settled();
 });

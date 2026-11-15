@@ -2,6 +2,10 @@
 
 A responsive investment research prototype for the ENAM Founding AI Engineer build challenge. FINN connects **what changed**, **what the primary evidence says**, and **who in your network can add context**.
 
+**[Live demo](https://finn-investment-agent-ayush.onrender.com)** · **[Source repository](https://github.com/ayushgoyal771/finn-investment-agent)**
+
+The demo uses Render's free tier and requires the owner's workspace access token. Its SQLite state can reset when the service sleeps or restarts. Live NSE filings and transcript research were verified from the cloud; Yahoo currently returns HTTP 429 there, and a large annual report timed out. The historical demonstration remains available without external data access.
+
 The application is one Python service with a buildless HTML/CSS/JavaScript frontend. No frontend build, account, API key, or paid service is needed for the complete demonstration.
 
 ## Run locally
@@ -90,7 +94,7 @@ npm ci
 npm test
 ```
 
-The DOM tests load the actual interface with in-process API fixtures and mocked fetch. They make **no browser or network requests** and do not verify rendering, layout or contrast. Browser preview permission was declined during this build, so actual desktop/phone visual QA remains unverified. See [validation results](docs/validation.md).
+The DOM tests load the actual interface with in-process API fixtures and mocked fetch. They make **no browser or network requests** and do not verify rendering, layout or contrast. Follow-up deployment QA verified the live app in a desktop browser and a 390-pixel phone viewport, including protected access, saved signals, comparative results, research and network search. A physical phone was not used. See [validation results](docs/validation.md).
 
 Live checks are opt-in and make outbound public-source requests:
 
@@ -134,4 +138,4 @@ docs/              Architecture, scope map, covering note and build summary
 
 Live research provides cited excerpts and optional model interpretation. It does not reliably normalize arbitrary PDF financial tables, build a four-quarter promise-versus-delivery ledger, or calculate every ratio in the reference glossary. The comparative-results demo uses synthetic data, rather than mislabelling a hand-entered table as extracted. Network data is synthetic and there is no LinkedIn scraping. Scanned PDFs need OCR, which is not implemented.
 
-The repository, deployment and assessment email have not been published/sent. The PDFs describe submission expectations; the user requested creation of the local codebase. A [covering-note draft](docs/covering-note.md), [requirements map](docs/requirements.md), and [honest build summary](docs/build-history.md) are included for the handoff.
+The source repository and free Render demo are published at the links above. No assessment email has been sent. A [covering-note draft](docs/covering-note.md), [requirements map](docs/requirements.md), and [honest build summary](docs/build-history.md) are included for the handoff.
